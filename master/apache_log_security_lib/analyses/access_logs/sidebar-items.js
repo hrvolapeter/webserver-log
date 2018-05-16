@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["injection","Injection detection"],["object_reference","Object reference detection"],["xss","Xss detection"]],"struct":[["AccessLog","Define properties of access log. Upon this structure we can perform access log analyzers."]]});
