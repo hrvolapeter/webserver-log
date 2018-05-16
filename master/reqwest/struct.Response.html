@@ -66,8 +66,8 @@
 <h1 id="errors" class="section-header"><a href="#errors">Errors</a></h1>
 <p>This method fails whenever the response body is not in JSON format
 or it cannot be properly deserialized to target type <code>T</code>. For more
-details please see [<code>serde_json::from_reader</code>].
-[<code>serde_json::from_reader</code>]: https://docs.serde.rs/serde_json/fn.from_reader.html</p>
+details please see <a href="../serde_json/de/fn.from_reader.html" title="`serde_json::from_reader`"><code>serde_json::from_reader</code></a>.
+<a href="../serde_json/de/fn.from_reader.html" title="`serde_json::from_reader`"><code>serde_json::from_reader</code></a>: https://docs.serde.rs/serde_json/fn.from_reader.html</p>
 </div><h4 id='method.text' class="method"><span id='text.v' class='invisible'><table class='table-display'><tbody><tr><td><code>pub fn <a href='#method.text' class='fnname'>text</a>(&amp;mut self) -&gt; <a class="type" href="../reqwest/type.Result.html" title="type reqwest::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></td><td><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/reqwest/response.rs.html#186-212' title='goto source code'>[src]</a></td></tr></tbody></table></span></h4><div class='docblock'><p>Get the response text.</p>
 <p>This method decodes the response body with BOM sniffing
 and with malformed sequences replaced with the REPLACEMENT CHARACTER.
