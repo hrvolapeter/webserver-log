@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["parse","Converts string to xml."]],"struct":[["Attribute","Wrapper for attribute to isloate external dependency."],["Element","Wrapper for element to isolate external dependency."]]});

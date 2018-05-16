@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["report_incidents","Reports passed incidents using configuration."]],"mod":[["elasticsearch","Reporting to elasticsearch"],["email","Reporting incidents using email."],["std","Reporting incidents to std."]],"trait":[["Reporting","Trait for output. All new reporters inside reporting layer must implement this trait."]]});

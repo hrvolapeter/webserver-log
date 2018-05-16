@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["access_logs","Analyzers for access log type"]],"struct":[["Incident","Structure that is returned when incident is detected."]],"trait":[["Analysable","Analysable trait for log types"]]});

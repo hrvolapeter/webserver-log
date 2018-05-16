@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Elasticsearch","Input source type"],["ElasticsearchLogMapping",""],["RunLogMapping",""]]});
