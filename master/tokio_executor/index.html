@@ -3,7 +3,7 @@
 work is performed. In order for the work defined by the future to happen,
 the future must be submitted to an executor. A future that is submitted to
 an executor is called a &quot;task&quot;.</p>
-<p>The executor is responsible for ensuring that <a href="../futures/future/trait.Future.html#tymethod.poll" title="`Future::poll`"><code>Future::poll</code></a> is called
+<p>The executor is responsible for ensuring that [<code>Future::poll</code>] is called
 whenever the task is [notified]. Notification happens when the internal
 state of a task transitions from &quot;not ready&quot; to ready. For example, a socket
 might have received data and a call to <code>read</code> will now be able to succeed.</p>
