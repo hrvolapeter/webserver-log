@@ -1,6 +1,6 @@
 #![deny(warnings)]
 
-extern crate apache_log_security_lib;
+extern crate webserver_log_lib;
 extern crate clap;
 extern crate serde_yaml;
 
@@ -8,10 +8,10 @@ use clap::{App, Arg};
 use std::fs::File;
 use std::fs::OpenOptions;
 use std::io::prelude::*;
-use apache_log_security_lib::*;
+use webserver_log_lib::*;
 
 fn main() {
-    let matches = App::new("Apache Log Security")
+    let matches = App::new("Webserver log")
         .version("0.1.0")
         .author("Peter Hrvola <peter.hrvola@hotmail.com>")
         .about("Performs analyses on webserver access logs")
@@ -20,14 +20,14 @@ fn main() {
                 .short("c")
                 .long("config")
                 .value_name("FILE")
-                .help("Sets a custom config file, default is /etc/apache_log_security.conf")
+                .help("Sets a custom config file, default is /etc/webserver_log.conf")
                 .takes_value(true),
         )
         .get_matches();
 
     let config_path = matches
         .value_of("config")
-        .unwrap_or("/etc/apache_log_security.conf");
+        .unwrap_or("/etc/webserver_log.conf");
     let config = load_config(&config_path).normalize_services_glob();
     run(config).unwrap();
 }
@@ -63,6 +63,7 @@ fn create_default_config(path: &str) -> File {
         .expect(&format!("Unable to write default config to {}.", path));
     file.flush().unwrap();
     file.seek(std::io::SeekFrom::Start(0)).unwrap();
+    println!("Default configuration has been created in: {}", path);
     file
 }
 

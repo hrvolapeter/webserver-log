@@ -1,10 +1,10 @@
 [package]
-name = "apache-log-security"
+name = "webserver_log"
 version = "0.1.0"
 authors = ["Peter Hrvola <peter.hrvola@hotmail.com>"]
 
 [dependencies]
-apache_log_security_lib = { path = "apache_log_security_lib" }
+webserver_log_lib = { path = "./webserver_log_lib" }
 
 clap = "2.30"
 

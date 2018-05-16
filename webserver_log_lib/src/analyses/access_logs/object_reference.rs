@@ -10,7 +10,8 @@ pub fn analyse<'a>(log: &'a AccessLog) -> Option<Incident<'a>> {
     let disallowed = vec!["/etc/", "/tmp/", "/../", "\\system32", ".cgi", "c:", "/test-cgi/", "/bash", ".dll", "/cgi-bin/"];
 
     let result = disallowed.iter().fold(false, |acc, &x| {
-        acc || url::url_decode(&log.path.to_lowercase()).contains(x)
+        let url = url::url_decode(&log.path.to_lowercase());
+        acc || url.contains(x) || url::url_decode(&url).contains(x)
     });
 
     if result {

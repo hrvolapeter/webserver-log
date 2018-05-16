@@ -1,16 +1,16 @@
-# apache_log_security
-[![Build Status](https://travis-ci.org/retep007/apache_log_security.svg?branch=master)](https://travis-ci.org/retep007/apache_log_security)
-[![Coverage Status](https://coveralls.io/repos/github/retep007/apache_log_security/badge.svg?branch=master)](https://coveralls.io/github/retep007/apache_log_security?branch=master)
+# Webserver log
+[![Build Status](https://travis-ci.org/retep007/webserver-log.svg?branch=master)](https://travis-ci.org/retep007/webserver-log)
+[![Coverage Status](https://coveralls.io/repos/github/retep007/webserver-log/badge.svg?branch=master)](https://coveralls.io/github/retep007/webserver-log?branch=master)
 
-[Library documentation](https://retep007.github.io/apache_log_security/)
+[Library documentation](https://retep007.github.io/webserver-log/)
 
 ## Building
 1. Install rust-lang compiler `curl -sSf https://static.rust-lang.org/rustup.sh | sh`
 2. Compile project `cargo build --release`
-3. Run final binary `./target/release/apache-log-security`
+3. Run final binary `./target/release/webserver-log`
 
 ## Configuration
-Configuration file is by default stored in `/etc/apache_log_security.conf` and can be changed by runing binary with `apache-log-security -c MY_PATH` argument.
+Configuration file is by default stored in `/etc/webserver-log.conf` and can be changed by runing binary with `webserver-log -c MY_PATH` argument.
 
 ---
 

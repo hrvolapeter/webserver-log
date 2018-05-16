@@ -54,9 +54,9 @@ use error::LibErr;
 ///
 /// Runing with default configuration:
 /// ```
-/// # extern crate apache_log_security_lib;
-/// use apache_log_security_lib::config::Config;
-/// # use apache_log_security_lib::run;
+/// # extern crate webserver_log_lib;
+/// use webserver_log_lib::config::Config;
+/// # use webserver_log_lib::run;
 ///
 /// let config = Config::new();
 /// run(config);
@@ -64,12 +64,12 @@ use error::LibErr;
 ///
 /// Runing with custom configuration. Using non-verbose std output and basic Xss detection.
 /// ```
-/// # extern crate apache_log_security_lib;
-/// use apache_log_security_lib::config::Config;
-/// use apache_log_security_lib::config::XssLevel;
-/// use apache_log_security_lib::config::Reporting;
-/// use apache_log_security_lib::reporting::std::Std;
-/// # use apache_log_security_lib::run;
+/// # extern crate webserver_log_lib;
+/// use webserver_log_lib::config::Config;
+/// use webserver_log_lib::config::XssLevel;
+/// use webserver_log_lib::config::Reporting;
+/// use webserver_log_lib::reporting::std::Std;
+/// # use webserver_log_lib::run;
 ///
 /// let config = Config {
 ///    reporting: vec![Reporting::Std(Std{verbose: false})],

@@ -1,11 +1,11 @@
-extern crate apache_log_security_lib;
+extern crate webserver_log_lib;
 extern crate chrono;
 #[macro_use]
 extern crate criterion;
 
-use apache_log_security_lib::analyses::access_logs::AccessLog;
-use apache_log_security_lib::config::Config;
-use apache_log_security_lib::analyses::Analysable;
+use webserver_log_lib::analyses::access_logs::AccessLog;
+use webserver_log_lib::config::Config;
+use webserver_log_lib::analyses::Analysable;
 use criterion::Criterion;
 use criterion::black_box;
 use chrono::prelude::*;

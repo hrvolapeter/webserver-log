@@ -25,29 +25,29 @@ matrix:
   - rust: nightly
   - rust: beta
 before_script:
-  - export PATH=$HOME/.cargo/bin:$PATH
-  - cargo install cargo-update || echo "cargo-update already installed"
-  - cargo install cargo-travis || echo "cargo-travis already installed"
-  - cargo install-update -a # update outdated cached binaries
+- export PATH=$HOME/.cargo/bin:$PATH
+- cargo install cargo-update || echo "cargo-update already installed"
+- cargo install cargo-travis || echo "cargo-travis already installed"
+- cargo install-update -a
 script:
 - |
   cargo build &&
   cargo test --all &&
   cargo bench --all &&
-  cargo doc -p apache_log_security_lib
+  cargo doc -p webserver_log_lib
 after_success:
-- cargo coveralls --all
+- cargo coveralls --all --verbose
 - cargo doc-upload --branch master
 services:
 - docker
-before_deploy: "./build-release apache-log-security ${TRAVIS_TAG}-${TRAVIS_OS_NAME}"
+before_deploy: rm -rf ./target && ./build-release webserver_log ${TRAVIS_TAG}-${TRAVIS_OS_NAME}
 deploy:
   provider: releases
   api_key:
-    secure: csohblEbzL9b6/Y7FS+Sx+7949MxiCEFscQ8lU2P+z0YjchXIJlnARhFTr3e8a69m3HIaEaxQ0lZJJIUWujy3LEiiH0MyFNqxhx+Yfvi0i/eIMvX7kLf3+/gjohy/CNrxbh2PnDJbPC0YQXQr4BcSYc6tSFaeE7M2vP736aPEF0r/iYtW+KA10JFnWAdUnGOabXj4gJosG72Dir9Az0OerzU0q/Occ0yiiNaWhXaBU9wiMnog13OqgRfFtuGLN9JkuSWECflL021q2KeylLuclEzysRHEf5I8/hx+bV9EYNoLd2ZV1+4X9RvlLjeC2ilXCVscHXbRppIvg6a8nTpAwSxqF3vkSojCiPjKIf2YU9M5ZNuRDSCBjfbSaiFDhQPMaxptoiuKH9gv8iJZz79tnGO9Bpie55ZUsc66l5ZYhYFlGYlym5OFMV2V7yGgakSbQM6TfHPC3APCht6D22+H+6lCizkSpjt4VnLNlvzeyqixxcCYWuRnzN2uYfsBG/JY3z3EKpqBbxa1dXckwucc+hzgGC1/Oc9ic/A//K+x4JNSjXVUtOOZEJ+P7McJLWybHZUrcE3yyPmfijXHbIepTq8lO8GKObRr7AZAiwyg8UZWzWExCp1HRfmIBSIhnKzDALllQ9u/+obFcUREZNbpN7XY4GBDiO2wngV0vLr3cU=
+    secure: QvEs4aVsVTl8aU84PtjOCsUfP9HTkJZ9QOejzAnbILEF/DMZQH3Gkn6J72TlZlc8ym3thLvHrwZfRlqIvKPQOJJDN/+2QsDmApFpyE365EwAZr2olajbtJsDWNGegRFrf4cBxJq5lYuwkPET86xha53jxu4aPv66oGnGAn5s2L1Gkcr/wqsEnvgLeBPdGhVnJgf5xQF7DoqQPa33cZbGOCIDIU3reUC3YfFoBUbCs7Zej0XbyIVwCQTd2xmkyMmi5zzmVM5yIbkuxXDiM/rayMd0H/2kKNO/c4e1VAgtD+JpEwXwEMrXIMo22jOwORJ1Z4MFMRCFbLwD0C2CLrC7kEKGUTLDZBP7f7IX/sho86ULhfmeFWIzZxj8EJIkVxomozK6nACACCFqm4S9sJOq9zwV0NTuM/0/fLNXamh77z3miNmmpReJpLc1HtErXhtAnnVWJFaI5Nzm5nFGi7ojtejwtYMq28/cG1WXNFWPUH7CafEkc6y6EY6y9Kg09R+/bEmkCzwslrNGEYv+/Yx4qLo3kS05UgTqwWJxi0Y77gCCKQ6dIo8GzKOzXFC/7RxQ5ffg7lCxQM9a9tH1G8bZrk2UcqN84vXJctwaScHB2okNJUh36o1C0O+VRumnJ0ptu9H/Po1OrZmIvMFygKVw65yoFlHmQVnCkyjrkO8u1x8=
   file_glob: true
-  file: apache-log-security-${TRAVIS_TAG}-${TRAVIS_OS_NAME}.*
-  skip_cleanup: true
-  on:
-    rust: stable
-    tags: true
+  file: webserver_log-${TRAVIS_TAG}-${TRAVIS_OS_NAME}.*
+  skip_cleanup: true 
+  on:  
+    rust: stable  
+    tags: true 

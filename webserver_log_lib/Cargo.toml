@@ -1,5 +1,5 @@
 [package]
-name = "apache_log_security_lib"
+name = "webserver_log_lib"
 version = "0.1.0"
 authors = ["Peter Hrvola <peter.hrvola@hotmail.com>"]
 

@@ -36,7 +36,7 @@ pub fn analyse<'a>(log: &'a AccessLog) -> Option<Incident<'a>> {
     let result = disallowed.iter().fold(false, |acc, &x| {
         let mut url = url::url_decode(&log.path.to_lowercase());
         url = url::remove_non_printable(&url);
-        acc || url.contains(x)
+        acc || url.contains(x) || url::url_decode(&url).contains(x)
     });
 
     if result {

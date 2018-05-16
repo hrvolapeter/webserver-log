@@ -15,12 +15,12 @@ use config::Config;
 ///
 /// We can run access log analyzers with default config like this:
 /// ```
-/// # extern crate apache_log_security_lib;
+/// # extern crate webserver_log_lib;
 /// # extern crate chrono;
-/// # use apache_log_security_lib::config::Config;
-/// # use apache_log_security_lib::analyses::Analysable;
-/// # use apache_log_security_lib::analyses::Incident;
-/// # use apache_log_security_lib::analyses::access_logs::AccessLog;
+/// # use webserver_log_lib::config::Config;
+/// # use webserver_log_lib::analyses::Analysable;
+/// # use webserver_log_lib::analyses::Incident;
+/// # use webserver_log_lib::analyses::access_logs::AccessLog;
 /// # use chrono::prelude::*;
 /// #
 /// # let date_time = "2015-2-18T23:16:9.15Z"

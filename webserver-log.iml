@@ -8,7 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/benches" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/lib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/apache_log_security_lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/webserver_log_lib" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
